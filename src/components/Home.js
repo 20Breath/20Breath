@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "../motion.js";
 import { Activity, Brain, Clapperboard, HeartPulse, Stethoscope } from "./Icons.js";
 import { goTo, h, pageTransition } from "../utils.js";
 

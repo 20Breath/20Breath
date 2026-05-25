@@ -1,6 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "./motion.js";
 import { h } from "./utils.js";
 import { About } from "./components/About.js";
 import { Footer } from "./components/Footer.js";

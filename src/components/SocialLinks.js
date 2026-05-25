@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "../motion.js";
 import { Camera, Music2 } from "./Icons.js";
 import { h, pageTransition } from "../utils.js";
 
