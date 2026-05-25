@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="20 نفس فريق توعوي للتعريف بتخصص العلاج التنفسي ونشر الوعي بأمراض الجهاز التنفسي."
+    />
+    <title>20 نفس | تنفس بأمان</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navy: "#0B243D",
+              medical: "#1E88E5",
+              soft: "#F4F7FA"
+            },
+            fontFamily: {
+              tajawal: ["Tajawal", "sans-serif"]
+            },
+            boxShadow: {
+              glow: "0 22px 60px rgba(30, 136, 229, 0.18)",
+              soft: "0 18px 48px rgba(11, 36, 61, 0.12)"
+            }
+          }
+        }
+      };
+    </script>
+    <link rel="stylesheet" href="./src/styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react@18.3.1",
+          "react/jsx-runtime": "https://esm.sh/react@18.3.1/jsx-runtime",
+          "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+          "framer-motion": "https://esm.sh/framer-motion@11.18.2?deps=react@18.3.1,react-dom@18.3.1"
+        }
+      }
+    </script>
+  </head>
+  <body class="font-tajawal bg-soft text-navy antialiased">
+    <div id="root"></div>
+    <script type="module" src="./src/App.js"></script>
+  </body>
+</html>
