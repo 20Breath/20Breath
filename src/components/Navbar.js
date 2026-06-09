@@ -55,6 +55,17 @@ export function Navbar({ route }) {
           h("span", { className: "block text-xs font-bold text-medical" }, "تنفس بأمان")
         )
       ),
+      h(
+        "button",
+        {
+          onClick: () => {
+            window.location.hash = "contact";
+            setOpen(false);
+          },
+          className: "mr-auto rounded-full bg-navy px-4 py-2 text-sm font-black text-white shadow-sm transition hover:bg-medical md:hidden"
+        },
+        "تواصل معنا"
+      ),
       h("div", { className: "hidden items-center gap-1 md:flex" }, links.map((link) => linkButton(link))),
       h(
         "button",
