@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { AnimatePresence } from "./motion.js";
 import { h } from "./utils.js";
 import { About } from "./components/About.js";
+import { Contact } from "./components/Contact.js";
 import { Footer } from "./components/Footer.js";
 import { Home } from "./components/Home.js";
 import { Join } from "./components/Join.js";
@@ -13,6 +14,7 @@ const routes = {
   home: Home,
   about: About,
   join: Join,
+  contact: Contact,
   socials: SocialLinks
 };
 
