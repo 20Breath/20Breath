@@ -14,9 +14,34 @@ const fields = [
   { name: "social", label: "حساب التواصل", type: "text", placeholder: "@username" }
 ];
 
+const initialFormValues = {
+  name: "",
+  email: "",
+  phone: "",
+  university: "",
+  specialty: "",
+  cv: "",
+  social: "",
+  gender: "",
+  requestedRole: "",
+  otherRole: "",
+  reason: "",
+  achievements: ""
+};
+
 export function Join() {
   const [status, setStatus] = React.useState("idle");
-  const [role, setRole] = React.useState("");
+  const [formValues, setFormValues] = React.useState(initialFormValues);
+  const role = formValues.requestedRole;
+
+  function updateField(event) {
+    const { name, value } = event.target;
+    setFormValues((current) => ({
+      ...current,
+      [name]: value,
+      ...(name === "requestedRole" && value !== "أخرى" ? { otherRole: "" } : {})
+    }));
+  }
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -26,8 +51,7 @@ export function Join() {
       return;
     }
 
-    const form = new FormData(event.currentTarget);
-    const payload = Object.fromEntries(form.entries());
+    const payload = { ...formValues };
     payload.requestedRole = payload.requestedRole === "أخرى" ? payload.otherRole || "أخرى" : payload.requestedRole || "";
 
     setStatus("sending");
@@ -40,8 +64,7 @@ export function Join() {
         body: JSON.stringify(payload)
       });
 
-      event.currentTarget.reset();
-      setRole("");
+      setFormValues(initialFormValues);
       setStatus("sent");
     } catch {
       setStatus("error");
@@ -74,6 +97,8 @@ export function Join() {
               h("input", {
                 name: field.name,
                 type: field.type,
+                value: formValues[field.name],
+                onChange: updateField,
                 placeholder: field.placeholder,
                 className: "w-full rounded-2xl border border-navy/10 bg-soft px-4 py-3 text-right font-medium text-navy outline-none transition focus:border-medical focus:bg-white focus:ring-4 focus:ring-medical/10"
               })
@@ -87,7 +112,8 @@ export function Join() {
               "select",
               {
                 name: "gender",
-                defaultValue: "",
+                value: formValues.gender,
+                onChange: updateField,
                 className: "w-full rounded-2xl border border-navy/10 bg-soft px-4 py-3 text-right font-medium text-navy outline-none transition focus:border-medical focus:bg-white focus:ring-4 focus:ring-medical/10"
               },
               h("option", { value: "" }, "اختياري"),
@@ -104,7 +130,7 @@ export function Join() {
               {
                 name: "requestedRole",
                 value: role,
-                onChange: (event) => setRole(event.target.value),
+                onChange: updateField,
                 className: "w-full rounded-2xl border border-navy/10 bg-soft px-4 py-3 text-right font-medium text-navy outline-none transition focus:border-medical focus:bg-white focus:ring-4 focus:ring-medical/10"
               },
               h("option", { value: "" }, "اختياري"),
@@ -123,6 +149,8 @@ export function Join() {
               h("input", {
                 name: "otherRole",
                 type: "text",
+                value: formValues.otherRole,
+                onChange: updateField,
                 placeholder: "اكتب الدور المطلوب",
                 className: "w-full rounded-2xl border border-navy/10 bg-soft px-4 py-3 text-right font-medium text-navy outline-none transition focus:border-medical focus:bg-white focus:ring-4 focus:ring-medical/10"
               })
@@ -135,6 +163,8 @@ export function Join() {
           h("textarea", {
             name: "reason",
             rows: 5,
+            value: formValues.reason,
+            onChange: updateField,
             placeholder: "اكتب لنا باختصار لماذا ترغب بالانضمام",
             className: "w-full resize-none rounded-2xl border border-navy/10 bg-soft px-4 py-3 text-right font-medium text-navy outline-none transition focus:border-medical focus:bg-white focus:ring-4 focus:ring-medical/10"
           })
@@ -146,6 +176,8 @@ export function Join() {
           h("textarea", {
             name: "achievements",
             rows: 4,
+            value: formValues.achievements,
+            onChange: updateField,
             placeholder: "اذكر أبرز إنجازاتك أو مشاركاتك التطوعية أو الإعلامية",
             className: "w-full resize-none rounded-2xl border border-navy/10 bg-soft px-4 py-3 text-right font-medium text-navy outline-none transition focus:border-medical focus:bg-white focus:ring-4 focus:ring-medical/10"
           })
