@@ -56,7 +56,8 @@ export function Home() {
           "div",
           { className: "mt-8 flex flex-col justify-center gap-3 sm:flex-row" },
           h("button", { onClick: () => goTo("about"), className: "rounded-full bg-navy px-8 py-3.5 text-base font-black text-white shadow-soft transition hover:bg-medical" }, "تعرف علينا"),
-          h("button", { onClick: () => goTo("join"), className: "rounded-full bg-white px-8 py-3.5 text-base font-black text-navy shadow-soft transition hover:bg-medical hover:text-white" }, "انضم لنا")
+          h("button", { onClick: () => goTo("join"), className: "rounded-full bg-white px-8 py-3.5 text-base font-black text-navy shadow-soft transition hover:bg-medical hover:text-white" }, "انضم لنا"),
+          h("button", { onClick: () => goTo("contact"), className: "rounded-full bg-white px-8 py-3.5 text-base font-black text-navy shadow-soft transition hover:bg-medical hover:text-white" }, "تواصل معنا")
         )
       )
     ),

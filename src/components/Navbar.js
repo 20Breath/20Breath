@@ -4,9 +4,9 @@ import { h } from "../utils.js";
 
 const links = [
   ["home", "الرئيسية"],
+  ["contact", "تواصل معنا"],
   ["about", "عن 20 نفس"],
   ["join", "انضم لنا"],
-  ["contact", "تواصل معنا"],
   ["socials", "منصاتنا"]
 ];
 
