@@ -10,7 +10,7 @@ const fields = [
   { name: "phone", label: "رقم الجوال", type: "tel", placeholder: "05xxxxxxxx" },
   { name: "university", label: "الجامعة / الجهة", type: "text", placeholder: "اسم الجامعة أو الجهة" },
   { name: "specialty", label: "التخصص", type: "text", placeholder: "مثال: علاج تنفسي" },
-  { name: "cv", label: "رابط CV", type: "url", placeholder: "https://..." },
+  { name: "cv", label: "رابط CV (اختياري)", type: "url", placeholder: "https://..." },
   { name: "social", label: "حساب التواصل", type: "text", placeholder: "@username" }
 ];
 
