@@ -18,32 +18,24 @@ const sections = [
 
 const founders = [
   {
-    src: "./assets/founder-current-1.jpeg",
+    src: "./assets/founder-avatar-1.jpeg",
     role: "مؤسس 1",
-    name: "عبدالعزيز الجلواح",
-    imageClass: "scale-[1.45]",
-    position: "50% 18%"
+    name: "عبدالعزيز الجلواح"
   },
   {
-    src: "./assets/founder-current-2.jpeg",
+    src: "./assets/founder-avatar-2.jpeg",
     role: "مؤسس 2",
-    name: "محمد الفايز",
-    imageClass: "scale-[1.18]",
-    position: "50% 12%"
+    name: "محمد الفايز"
   },
   {
-    src: "./assets/founder-current-3.jpeg",
+    src: "./assets/founder-avatar-3.jpeg",
     role: "مؤسس 3",
-    name: "أحمد الرويشد",
-    imageClass: "scale-[1.55]",
-    position: "50% 14%"
+    name: "أحمد الرويشد"
   },
   {
-    src: "./assets/founder-current-4.jpeg",
+    src: "./assets/founder-avatar-4.jpeg",
     role: "مؤسس 4",
-    name: "حسين الرمضان",
-    imageClass: "scale-[2.45]",
-    position: "50% 20%"
+    name: "حسين الرمضان"
   }
 ];
 
@@ -92,12 +84,11 @@ export function About() {
               },
               h(
                 "div",
-                { className: "mx-auto mb-6 h-32 w-32 overflow-hidden rounded-full bg-soft p-1 ring-4 ring-medical/80" },
+                { className: "mx-auto mb-6 h-32 w-32 overflow-hidden rounded-full bg-white p-1 ring-4 ring-medical/80" },
                 h("img", {
                   src: founder.src,
                   alt: founder.name,
-                  style: { objectPosition: founder.position },
-                  className: `h-full w-full rounded-full object-cover transition duration-300 ${founder.imageClass}`
+                  className: "h-full w-full rounded-full object-cover"
                 })
               ),
               h("p", { className: "mb-2 text-sm font-black text-medical" }, founder.role),
