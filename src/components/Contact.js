@@ -20,14 +20,7 @@ export function Contact() {
         }),
         h("h1", { className: "text-4xl font-black text-navy sm:text-5xl" }, "تواصل معنا"),
         h("p", { className: "mx-auto mt-4 max-w-xl text-lg font-medium leading-8 text-navy/68" }, "للاستفسارات والتعاون، يمكنكم مراسلتنا عبر البريد الإلكتروني."),
-        h(
-          "a",
-          {
-            href: `mailto:${email}?subject=${encodeURIComponent("تواصل مع فريق 20 نفس")}`,
-            className: "mt-8 inline-flex rounded-full bg-navy px-8 py-3.5 text-base font-black text-white shadow-soft transition hover:bg-medical"
-          },
-          email
-        )
+        h("p", { className: "mt-8 inline-flex rounded-full bg-navy px-8 py-3.5 text-base font-black text-white shadow-soft" }, email)
       )
     )
   );

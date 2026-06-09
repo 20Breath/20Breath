@@ -2,9 +2,6 @@ import React from "react";
 import { Menu, X } from "./Icons.js";
 import { h } from "../utils.js";
 
-const contactEmail = "azizkj9080@gmail.com";
-const contactHref = `mailto:${contactEmail}?subject=${encodeURIComponent("تواصل مع فريق 20 نفس")}`;
-
 const links = [
   ["home", "الرئيسية"],
   ["about", "عن 20 نفس"],
@@ -22,12 +19,7 @@ export function Navbar({ route }) {
       {
         key: id,
         onClick: () => {
-          if (id === "contact") {
-            window.location.href = contactHref;
-          } else {
-            window.location.hash = id;
-          }
-
+          window.location.hash = id;
           setOpen(false);
         },
         className: [
