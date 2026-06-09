@@ -5,6 +5,7 @@ import { h } from "../utils.js";
 const links = [
   ["home", "الرئيسية"],
   ["about", "عن 20 نفس"],
+  ["join", "انضم لنا"],
   ["socials", "منصاتنا"]
 ];
 

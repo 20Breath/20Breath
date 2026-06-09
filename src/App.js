@@ -5,12 +5,14 @@ import { h } from "./utils.js";
 import { About } from "./components/About.js";
 import { Footer } from "./components/Footer.js";
 import { Home } from "./components/Home.js";
+import { Join } from "./components/Join.js";
 import { Navbar } from "./components/Navbar.js";
 import { SocialLinks } from "./components/SocialLinks.js";
 
 const routes = {
   home: Home,
   about: About,
+  join: Join,
   socials: SocialLinks
 };
 

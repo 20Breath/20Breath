@@ -3,6 +3,7 @@ import { h } from "../utils.js";
 const quickLinks = [
   ["home", "الرئيسية"],
   ["about", "عن الفريق"],
+  ["join", "انضم لنا"],
   ["socials", "منصاتنا"]
 ];
 
