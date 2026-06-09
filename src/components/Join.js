@@ -55,7 +55,7 @@ export function Join() {
         "div",
         { className: "mb-9 text-center" },
         h("h1", { className: "text-4xl font-black text-navy sm:text-5xl" }, "انضم لفريق 20 نفس"),
-        h("p", { className: "mx-auto mt-4 max-w-2xl text-lg font-medium leading-8 text-navy/68" }, "عبئ بياناتك، وستصل التسجيلات إلى جدول الفريق مباشرة بعد تفعيل الربط.")
+        h("p", { className: "mx-auto mt-4 max-w-2xl text-lg font-medium leading-8 text-navy/68" }, "عبئ البيانات التي ترغب بمشاركتها، وستصل التسجيلات إلى جدول الفريق بعد تفعيل الربط.")
       ),
       h(
         "form",
@@ -71,10 +71,25 @@ export function Join() {
               h("input", {
                 name: field.name,
                 type: field.type,
-                required: field.name !== "social",
                 placeholder: field.placeholder,
                 className: "w-full rounded-2xl border border-navy/10 bg-soft px-4 py-3 text-right font-medium text-navy outline-none transition focus:border-medical focus:bg-white focus:ring-4 focus:ring-medical/10"
               })
+            )
+          ),
+          h(
+            "label",
+            { className: "block" },
+            h("span", { className: "mb-2 block text-sm font-black text-navy/78" }, "الجنس"),
+            h(
+              "select",
+              {
+                name: "gender",
+                defaultValue: "",
+                className: "w-full rounded-2xl border border-navy/10 bg-soft px-4 py-3 text-right font-medium text-navy outline-none transition focus:border-medical focus:bg-white focus:ring-4 focus:ring-medical/10"
+              },
+              h("option", { value: "" }, "اختياري"),
+              h("option", { value: "ذكر" }, "ذكر"),
+              h("option", { value: "أنثى" }, "أنثى")
             )
           )
         ),
@@ -84,7 +99,6 @@ export function Join() {
           h("span", { className: "mb-2 block text-sm font-black text-navy/78" }, "سبب الانضمام"),
           h("textarea", {
             name: "reason",
-            required: true,
             rows: 5,
             placeholder: "اكتب لنا باختصار لماذا ترغب بالانضمام",
             className: "w-full resize-none rounded-2xl border border-navy/10 bg-soft px-4 py-3 text-right font-medium text-navy outline-none transition focus:border-medical focus:bg-white focus:ring-4 focus:ring-medical/10"
@@ -109,6 +123,7 @@ export function Join() {
           },
           status === "sending" ? "جاري الإرسال..." : "إرسال التسجيل"
         ),
+        h("p", { className: "mt-3 text-center text-xs font-bold text-navy/50" }, "ملاحظة: إذا أدخلت بريدًا إلكترونيًا، يقبل النظام تسجيلًا واحدًا فقط لكل بريد."),
         status === "sent" && h("p", { className: "mt-4 text-center text-sm font-black text-medical" }, "تم إرسال التسجيل بنجاح."),
         status === "missing-endpoint" && h("p", { className: "mt-4 text-center text-sm font-black text-amber-700" }, "النموذج جاهز، وتبقى إضافة رابط Google Apps Script لتفعيل الإرسال."),
         status === "error" && h("p", { className: "mt-4 text-center text-sm font-black text-red-600" }, "تعذر الإرسال، حاول مرة أخرى.")
