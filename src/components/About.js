@@ -19,22 +19,22 @@ const sections = [
 const founders = [
   {
     src: "./assets/founder-avatar-1.jpeg",
-    role: "مؤسس 1",
+    role: "مؤسس",
     name: "عبدالعزيز الجلواح"
   },
   {
     src: "./assets/founder-avatar-2.jpeg",
-    role: "مؤسس 2",
+    role: "مؤسس",
     name: "محمد الفايز"
   },
   {
     src: "./assets/founder-avatar-3.jpeg",
-    role: "مؤسس 3",
+    role: "مؤسس",
     name: "أحمد الرويشد"
   },
   {
     src: "./assets/founder-avatar-4.jpeg",
-    role: "مؤسس 4",
+    role: "مؤسس",
     name: "حسين الرمضان"
   }
 ];

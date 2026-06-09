@@ -4,8 +4,8 @@ const quickLinks = [
   ["home", "الرئيسية"],
   ["about", "عن الفريق"],
   ["join", "انضم لنا"],
-  ["contact", "تواصل معنا"],
-  ["socials", "منصاتنا"]
+  ["socials", "منصاتنا"],
+  ["contact", "تواصل معنا"]
 ];
 
 export function Footer() {
