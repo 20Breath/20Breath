@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, X } from "./Icons.js";
+import { Menu, Share2, X } from "./Icons.js?v=20260610-share-site";
 import { h } from "../utils.js";
 
 const links = [
@@ -12,6 +12,39 @@ const links = [
 
 export function Navbar({ route }) {
   const [open, setOpen] = React.useState(false);
+  const [shareMessage, setShareMessage] = React.useState("");
+
+  async function shareSite() {
+    const shareData = {
+      title: "20 نفس",
+      text: "فريق توعوي يهدف إلى تعريف المجتمع بتخصص العلاج التنفسي.",
+      url: "https://20breath.github.io/20Breath/"
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+        setShareMessage("");
+        setOpen(false);
+        return;
+      }
+
+      if (navigator.clipboard) {
+        await navigator.clipboard.writeText(shareData.url);
+        setShareMessage("تم نسخ رابط الموقع");
+        setTimeout(() => setShareMessage(""), 2200);
+        setOpen(false);
+        return;
+      }
+
+      setShareMessage(shareData.url);
+    } catch (error) {
+      if (error?.name !== "AbortError") {
+        setShareMessage("تعذرت المشاركة، حاول مرة أخرى");
+        setTimeout(() => setShareMessage(""), 2200);
+      }
+    }
+  }
 
   const linkButton = ([id, label], mobile = false) =>
     h(
@@ -55,7 +88,21 @@ export function Navbar({ route }) {
           h("span", { className: "block text-xs font-bold text-medical" }, "تنفس بأمان")
         )
       ),
-      h("div", { className: "hidden items-center gap-1 md:flex" }, links.map((link) => linkButton(link))),
+      h(
+        "div",
+        { className: "hidden items-center gap-1 md:flex" },
+        links.map((link) => linkButton(link)),
+        h(
+          "button",
+          {
+            type: "button",
+            onClick: shareSite,
+            className: "inline-flex items-center gap-2 rounded-full bg-medical px-4 py-2 text-sm font-bold text-white shadow-sm transition hover:bg-navy"
+          },
+          h(Share2, { size: 17 }),
+          "شارك الموقع"
+        )
+      ),
       h(
         "button",
         {
@@ -70,7 +117,27 @@ export function Navbar({ route }) {
       h(
         "div",
         { className: "nav-glass mx-auto mt-3 max-w-6xl rounded-3xl p-3 md:hidden" },
-        h("div", { className: "grid gap-2" }, links.map((link) => linkButton(link, true)))
+        h(
+          "div",
+          { className: "grid gap-2" },
+          links.map((link) => linkButton(link, true)),
+          h(
+            "button",
+            {
+              type: "button",
+              onClick: shareSite,
+              className: "flex w-full items-center justify-end gap-2 rounded-full bg-medical px-4 py-2 text-right text-sm font-bold text-white shadow-sm transition hover:bg-navy"
+            },
+            "شارك الموقع",
+            h(Share2, { size: 17 })
+          )
+        )
+      ),
+    shareMessage &&
+      h(
+        "div",
+        { className: "mx-auto mt-3 max-w-6xl px-2 text-left md:text-left" },
+        h("span", { className: "inline-flex rounded-full bg-navy px-4 py-2 text-xs font-black text-white shadow-soft" }, shareMessage)
       )
   );
 }

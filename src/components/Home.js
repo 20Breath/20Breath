@@ -1,5 +1,5 @@
 import { motion } from "../motion.js?v=20260610-smooth-join-email-required";
-import { Activity, Brain, Clapperboard, HeartPulse, Stethoscope } from "./Icons.js";
+import { Activity, Brain, Clapperboard, HeartPulse, Stethoscope } from "./Icons.js?v=20260610-share-site";
 import { goTo, h, pageTransition } from "../utils.js";
 
 const cards = [

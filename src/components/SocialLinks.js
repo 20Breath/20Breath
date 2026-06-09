@@ -1,5 +1,5 @@
 import { motion } from "../motion.js?v=20260610-smooth-join-email-required";
-import { Camera, Music2 } from "./Icons.js";
+import { Camera, Music2 } from "./Icons.js?v=20260610-share-site";
 import { h, pageTransition } from "../utils.js";
 
 const platforms = [
