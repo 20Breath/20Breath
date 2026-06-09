@@ -2,12 +2,15 @@ import React from "react";
 import { Menu, X } from "./Icons.js";
 import { h } from "../utils.js";
 
+const contactEmail = "azizkj9080@gmail.com";
+const contactHref = `mailto:${contactEmail}?subject=${encodeURIComponent("تواصل مع فريق 20 نفس")}`;
+
 const links = [
   ["home", "الرئيسية"],
-  ["contact", "تواصل معنا"],
   ["about", "عن 20 نفس"],
   ["join", "انضم لنا"],
-  ["socials", "منصاتنا"]
+  ["socials", "منصاتنا"],
+  ["contact", "تواصل معنا"]
 ];
 
 export function Navbar({ route }) {
@@ -19,7 +22,12 @@ export function Navbar({ route }) {
       {
         key: id,
         onClick: () => {
-          window.location.hash = id;
+          if (id === "contact") {
+            window.location.href = contactHref;
+          } else {
+            window.location.hash = id;
+          }
+
           setOpen(false);
         },
         className: [
@@ -59,7 +67,7 @@ export function Navbar({ route }) {
         "button",
         {
           onClick: () => {
-            window.location.hash = "contact";
+            window.location.href = contactHref;
             setOpen(false);
           },
           className: "mr-auto rounded-full bg-navy px-4 py-2 text-sm font-black text-white shadow-sm transition hover:bg-medical md:hidden"
