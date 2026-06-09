@@ -25,7 +25,7 @@ const founders = [
   {
     src: "./assets/founder-avatar-4.jpeg",
     role: "مؤسس",
-    name: "حسين الرمضان"
+    name: "محمد الفايز"
   },
   {
     src: "./assets/founder-avatar-3.jpeg",
@@ -35,7 +35,7 @@ const founders = [
   {
     src: "./assets/founder-avatar-2.jpeg",
     role: "مؤسس",
-    name: "محمد الفايز"
+    name: "حسين الرمضان"
   }
 ];
 

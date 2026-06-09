@@ -2,13 +2,13 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { AnimatePresence } from "./motion.js";
 import { h } from "./utils.js";
-import { About } from "./components/About.js?v=20260610-final-updates";
-import { Contact } from "./components/Contact.js?v=20260610-final-updates";
-import { Footer } from "./components/Footer.js?v=20260610-final-updates";
-import { Home } from "./components/Home.js?v=20260610-final-updates";
-import { Join } from "./components/Join.js?v=20260610-final-updates";
-import { Navbar } from "./components/Navbar.js?v=20260610-final-updates";
-import { SocialLinks } from "./components/SocialLinks.js?v=20260610-final-updates";
+import { About } from "./components/About.js?v=20260610-swap-founder-names";
+import { Contact } from "./components/Contact.js?v=20260610-swap-founder-names";
+import { Footer } from "./components/Footer.js?v=20260610-swap-founder-names";
+import { Home } from "./components/Home.js?v=20260610-swap-founder-names";
+import { Join } from "./components/Join.js?v=20260610-swap-founder-names";
+import { Navbar } from "./components/Navbar.js?v=20260610-swap-founder-names";
+import { SocialLinks } from "./components/SocialLinks.js?v=20260610-swap-founder-names";
 
 const routes = {
   home: Home,
