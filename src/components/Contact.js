@@ -3,6 +3,7 @@ import { h, pageTransition } from "../utils.js";
 
 export function Contact() {
   const email = "azizkj9080@gmail.com";
+  const phone = "0591061424";
 
   return h(
     motion.main,
@@ -19,8 +20,13 @@ export function Contact() {
           className: "mx-auto mb-6 h-28 w-28 rounded-3xl object-contain p-2 shadow-sm ring-1 ring-navy/10"
         }),
         h("h1", { className: "text-4xl font-black text-navy sm:text-5xl" }, "تواصل معنا"),
-        h("p", { className: "mx-auto mt-4 max-w-xl text-lg font-medium leading-8 text-navy/68" }, "للاستفسارات والتعاون، يمكنكم مراسلتنا عبر البريد الإلكتروني."),
-        h("p", { className: "mt-8 inline-flex rounded-full bg-navy px-8 py-3.5 text-base font-black text-white shadow-soft" }, email)
+        h("p", { className: "mx-auto mt-4 max-w-xl text-lg font-medium leading-8 text-navy/68" }, "للاستفسارات والتعاون، يمكنكم التواصل معنا عبر البريد الإلكتروني أو رقم التواصل."),
+        h(
+          "div",
+          { className: "mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row" },
+          h("p", { className: "rounded-full bg-navy px-8 py-3.5 text-base font-black text-white shadow-soft" }, email),
+          h("p", { className: "rounded-full bg-soft px-8 py-3.5 text-base font-black text-navy shadow-soft ring-1 ring-navy/10" }, phone)
+        )
       )
     )
   );

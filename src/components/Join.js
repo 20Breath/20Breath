@@ -16,6 +16,7 @@ const fields = [
 
 export function Join() {
   const [status, setStatus] = React.useState("idle");
+  const [role, setRole] = React.useState("");
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -27,6 +28,7 @@ export function Join() {
 
     const form = new FormData(event.currentTarget);
     const payload = Object.fromEntries(form.entries());
+    payload.requestedRole = payload.requestedRole === "أخرى" ? payload.otherRole || "أخرى" : payload.requestedRole || "";
 
     setStatus("sending");
 
@@ -39,6 +41,7 @@ export function Join() {
       });
 
       event.currentTarget.reset();
+      setRole("");
       setStatus("sent");
     } catch {
       setStatus("error");
@@ -91,7 +94,39 @@ export function Join() {
               h("option", { value: "ذكر" }, "ذكر"),
               h("option", { value: "أنثى" }, "أنثى")
             )
-          )
+          ),
+          h(
+            "label",
+            { className: "block" },
+            h("span", { className: "mb-2 block text-sm font-black text-navy/78" }, "الدور المطلوب"),
+            h(
+              "select",
+              {
+                name: "requestedRole",
+                value: role,
+                onChange: (event) => setRole(event.target.value),
+                className: "w-full rounded-2xl border border-navy/10 bg-soft px-4 py-3 text-right font-medium text-navy outline-none transition focus:border-medical focus:bg-white focus:ring-4 focus:ring-medical/10"
+              },
+              h("option", { value: "" }, "اختياري"),
+              h("option", { value: "مصور" }, "مصور"),
+              h("option", { value: "ممنتج" }, "ممنتج"),
+              h("option", { value: "كاتب محتوى" }, "كاتب محتوى"),
+              h("option", { value: "مقدم" }, "مقدم"),
+              h("option", { value: "أخرى" }, "أخرى")
+            )
+          ),
+          role === "أخرى" &&
+            h(
+              "label",
+              { className: "block" },
+              h("span", { className: "mb-2 block text-sm font-black text-navy/78" }, "اكتب الدور"),
+              h("input", {
+                name: "otherRole",
+                type: "text",
+                placeholder: "اكتب الدور المطلوب",
+                className: "w-full rounded-2xl border border-navy/10 bg-soft px-4 py-3 text-right font-medium text-navy outline-none transition focus:border-medical focus:bg-white focus:ring-4 focus:ring-medical/10"
+              })
+            )
         ),
         h(
           "label",
@@ -123,7 +158,6 @@ export function Join() {
           },
           status === "sending" ? "جاري الإرسال..." : "إرسال التسجيل"
         ),
-        h("p", { className: "mt-3 text-center text-xs font-bold text-navy/50" }, "ملاحظة: إذا أدخلت بريدًا إلكترونيًا، يقبل النظام تسجيلًا واحدًا فقط لكل بريد."),
         status === "sent" && h("p", { className: "mt-4 text-center text-sm font-black text-medical" }, "تم إرسال التسجيل بنجاح."),
         status === "missing-endpoint" && h("p", { className: "mt-4 text-center text-sm font-black text-amber-700" }, "النموذج جاهز، وتبقى إضافة رابط Google Apps Script لتفعيل الإرسال."),
         status === "error" && h("p", { className: "mt-4 text-center text-sm font-black text-red-600" }, "تعذر الإرسال، حاول مرة أخرى.")

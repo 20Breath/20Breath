@@ -23,9 +23,9 @@ const founders = [
     name: "عبدالعزيز الجلواح"
   },
   {
-    src: "./assets/founder-avatar-2.jpeg",
+    src: "./assets/founder-avatar-4.jpeg",
     role: "مؤسس",
-    name: "محمد الفايز"
+    name: "حسين الرمضان"
   },
   {
     src: "./assets/founder-avatar-3.jpeg",
@@ -33,9 +33,9 @@ const founders = [
     name: "أحمد الرويشد"
   },
   {
-    src: "./assets/founder-avatar-4.jpeg",
+    src: "./assets/founder-avatar-2.jpeg",
     role: "مؤسس",
-    name: "حسين الرمضان"
+    name: "محمد الفايز"
   }
 ];
 
