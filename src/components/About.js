@@ -17,10 +17,34 @@ const sections = [
 ];
 
 const founders = [
-  "./assets/founder-current-1.jpeg",
-  "./assets/founder-current-2.jpeg",
-  "./assets/founder-current-3.jpeg",
-  "./assets/founder-current-4.jpeg"
+  {
+    src: "./assets/founder-current-1.jpeg",
+    role: "مؤسس 1",
+    name: "عبدالعزيز الجلواح",
+    imageClass: "scale-[1.45]",
+    position: "50% 18%"
+  },
+  {
+    src: "./assets/founder-current-2.jpeg",
+    role: "مؤسس 2",
+    name: "محمد الفايز",
+    imageClass: "scale-[1.18]",
+    position: "50% 12%"
+  },
+  {
+    src: "./assets/founder-current-3.jpeg",
+    role: "مؤسس 3",
+    name: "أحمد الرويشد",
+    imageClass: "scale-[1.55]",
+    position: "50% 14%"
+  },
+  {
+    src: "./assets/founder-current-4.jpeg",
+    role: "مؤسس 4",
+    name: "حسين الرمضان",
+    imageClass: "scale-[2.45]",
+    position: "50% 20%"
+  }
 ];
 
 export function About() {
@@ -51,35 +75,33 @@ export function About() {
       h(
         "section",
         { className: "mt-14" },
-        h("p", { className: "mb-5 text-sm font-black tracking-[0.45em] text-navy/40" }, "مؤسسو 20 نفس"),
+        h("p", { className: "mb-5 text-sm font-black tracking-[0.35em] text-navy/45" }, "مؤسسو 20 نفس"),
         h(
           "div",
           { className: "grid gap-6 sm:grid-cols-2 xl:grid-cols-4" },
-          founders.map((src, index) =>
+          founders.map((founder, index) =>
             h(
               motion.article,
               {
-                key: src,
+                key: founder.name,
                 initial: { opacity: 0, y: 18 },
                 whileInView: { opacity: 1, y: 0 },
                 viewport: { once: true },
                 transition: { delay: index * 0.05 },
-                className: [
-                  "rounded-[1.5rem] border bg-white/82 p-7 text-center shadow-soft backdrop-blur transition hover:-translate-y-1 hover:shadow-glow",
-                  index < 2 ? "border-medical/25 ring-1 ring-medical/15" : "border-navy/10"
-                ].join(" ")
+                className: "rounded-[1.5rem] border border-navy/10 bg-white p-7 text-center shadow-soft transition hover:-translate-y-1 hover:border-medical/30 hover:shadow-glow"
               },
               h(
                 "div",
-                { className: "mx-auto mb-6 h-28 w-28 overflow-hidden rounded-full bg-soft p-1 ring-4 ring-medical/80" },
+                { className: "mx-auto mb-6 h-32 w-32 overflow-hidden rounded-full bg-soft p-1 ring-4 ring-medical/80" },
                 h("img", {
-                  src,
-                  alt: `مؤسس من فريق 20 نفس ${index + 1}`,
-                  className: "h-full w-full rounded-full object-cover object-top"
+                  src: founder.src,
+                  alt: founder.name,
+                  style: { objectPosition: founder.position },
+                  className: `h-full w-full rounded-full object-cover transition duration-300 ${founder.imageClass}`
                 })
               ),
-              h("h2", { className: "text-xl font-black text-navy" }, `مؤسس ${index + 1}`),
-              h("p", { className: "mt-2 text-base font-bold text-navy/55" }, "فريق 20 نفس")
+              h("p", { className: "mb-2 text-sm font-black text-medical" }, founder.role),
+              h("h2", { className: "text-xl font-black text-navy" }, founder.name)
             )
           )
         )
