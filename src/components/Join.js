@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "../motion.js";
+import { motion } from "../motion.js?v=20260610-smooth-join-email-required";
 import { h, pageTransition } from "../utils.js";
 
 const FORM_ENDPOINT = "";
@@ -99,6 +99,7 @@ export function Join() {
                 type: field.type,
                 value: formValues[field.name],
                 onChange: updateField,
+                required: field.name === "email",
                 placeholder: field.placeholder,
                 className: "w-full rounded-2xl border border-navy/10 bg-soft px-4 py-3 text-right font-medium text-navy outline-none transition focus:border-medical focus:bg-white focus:ring-4 focus:ring-medical/10"
               })

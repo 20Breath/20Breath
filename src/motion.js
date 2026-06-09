@@ -10,6 +10,8 @@ const ignoredMotionProps = new Set([
   "whileHover"
 ]);
 
+const motionElementCache = new Map();
+
 function createMotionElement(tag) {
   return function MotionElement(props) {
     const cleanProps = {};
@@ -27,7 +29,13 @@ function createMotionElement(tag) {
 export const motion = new Proxy(
   {},
   {
-    get: (_, tag) => createMotionElement(tag)
+    get: (_, tag) => {
+      if (!motionElementCache.has(tag)) {
+        motionElementCache.set(tag, createMotionElement(tag));
+      }
+
+      return motionElementCache.get(tag);
+    }
   }
 );
 

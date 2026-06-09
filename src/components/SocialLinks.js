@@ -1,4 +1,4 @@
-import { motion } from "../motion.js";
+import { motion } from "../motion.js?v=20260610-smooth-join-email-required";
 import { Camera, Music2 } from "./Icons.js";
 import { h, pageTransition } from "../utils.js";
 

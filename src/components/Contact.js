@@ -1,4 +1,4 @@
-import { motion } from "../motion.js";
+import { motion } from "../motion.js?v=20260610-smooth-join-email-required";
 import { h, pageTransition } from "../utils.js";
 
 export function Contact() {
