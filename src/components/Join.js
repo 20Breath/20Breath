@@ -22,7 +22,7 @@ export function Join() {
     event.preventDefault();
 
     if (!FORM_ENDPOINT) {
-      setStatus("missing-endpoint");
+      setStatus("error");
       return;
     }
 
@@ -159,8 +159,7 @@ export function Join() {
           status === "sending" ? "جاري الإرسال..." : "إرسال التسجيل"
         ),
         status === "sent" && h("p", { className: "mt-4 text-center text-sm font-black text-medical" }, "تم إرسال التسجيل بنجاح."),
-        status === "missing-endpoint" && h("p", { className: "mt-4 text-center text-sm font-black text-amber-700" }, "النموذج جاهز، وتبقى إضافة رابط Google Apps Script لتفعيل الإرسال."),
-        status === "error" && h("p", { className: "mt-4 text-center text-sm font-black text-red-600" }, "تعذر الإرسال، حاول مرة أخرى.")
+        status === "error" && h("p", { className: "mt-4 text-center text-sm font-black text-red-600" }, "تعذر إرسال التسجيل حاليًا، حاول مرة أخرى لاحقًا.")
       )
     )
   );

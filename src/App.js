@@ -2,13 +2,13 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { AnimatePresence } from "./motion.js";
 import { h } from "./utils.js";
-import { About } from "./components/About.js?v=20260610-swap-founder-names";
-import { Contact } from "./components/Contact.js?v=20260610-swap-founder-names";
-import { Footer } from "./components/Footer.js?v=20260610-swap-founder-names";
-import { Home } from "./components/Home.js?v=20260610-swap-founder-names";
-import { Join } from "./components/Join.js?v=20260610-swap-founder-names";
-import { Navbar } from "./components/Navbar.js?v=20260610-swap-founder-names";
-import { SocialLinks } from "./components/SocialLinks.js?v=20260610-swap-founder-names";
+import { About } from "./components/About.js?v=20260610-join-error-copy";
+import { Contact } from "./components/Contact.js?v=20260610-join-error-copy";
+import { Footer } from "./components/Footer.js?v=20260610-join-error-copy";
+import { Home } from "./components/Home.js?v=20260610-join-error-copy";
+import { Join } from "./components/Join.js?v=20260610-join-error-copy";
+import { Navbar } from "./components/Navbar.js?v=20260610-join-error-copy";
+import { SocialLinks } from "./components/SocialLinks.js?v=20260610-join-error-copy";
 
 const routes = {
   home: Home,
