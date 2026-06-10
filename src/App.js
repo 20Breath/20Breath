@@ -1,14 +1,14 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { AnimatePresence } from "./motion.js?v=20260610-share-link-muted";
+import { AnimatePresence } from "./motion.js?v=20260610-registration-connected";
 import { h } from "./utils.js";
-import { About } from "./components/About.js?v=20260610-share-link-muted";
-import { Contact } from "./components/Contact.js?v=20260610-share-link-muted";
-import { Footer } from "./components/Footer.js?v=20260610-share-link-muted";
-import { Home } from "./components/Home.js?v=20260610-share-link-muted";
-import { Join } from "./components/Join.js?v=20260610-share-link-muted";
-import { Navbar } from "./components/Navbar.js?v=20260610-share-link-muted";
-import { SocialLinks } from "./components/SocialLinks.js?v=20260610-share-link-muted";
+import { About } from "./components/About.js?v=20260610-registration-connected";
+import { Contact } from "./components/Contact.js?v=20260610-registration-connected";
+import { Footer } from "./components/Footer.js?v=20260610-registration-connected";
+import { Home } from "./components/Home.js?v=20260610-registration-connected";
+import { Join } from "./components/Join.js?v=20260610-registration-connected";
+import { Navbar } from "./components/Navbar.js?v=20260610-registration-connected";
+import { SocialLinks } from "./components/SocialLinks.js?v=20260610-registration-connected";
 
 const routes = {
   home: Home,

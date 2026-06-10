@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "../motion.js?v=20260610-smooth-join-email-required";
 import { h, pageTransition } from "../utils.js";
 
-const FORM_ENDPOINT = "";
+const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbyCj0nr_CXjP6_MIJcOVtFdxyANnUVIOzZdVeRis_BYsk0JHIrKqVb-OC9qRCdmtPTV/exec";
 
 const fields = [
   { name: "name", label: "الاسم", type: "text", placeholder: "اكتب اسمك" },
