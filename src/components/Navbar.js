@@ -1,5 +1,6 @@
 import React from "react";
-import { Menu, Share2, X } from "./Icons.js?v=20260610-share-site";
+import { Menu, Share2, X } from "./Icons.js?v=20260610-share-link-muted";
+import { shareWebsite } from "../share.js?v=20260610-share-link-muted";
 import { h } from "../utils.js";
 
 const links = [
@@ -15,29 +16,14 @@ export function Navbar({ route }) {
   const [shareMessage, setShareMessage] = React.useState("");
 
   async function shareSite() {
-    const shareData = {
-      title: "20 نفس",
-      text: "فريق توعوي يهدف إلى تعريف المجتمع بتخصص العلاج التنفسي.",
-      url: "https://20breath.github.io/20Breath/"
-    };
-
     try {
-      if (navigator.share) {
-        await navigator.share(shareData);
-        setShareMessage("");
-        setOpen(false);
-        return;
-      }
-
-      if (navigator.clipboard) {
-        await navigator.clipboard.writeText(shareData.url);
-        setShareMessage("تم نسخ رابط الموقع");
+      const message = await shareWebsite();
+      setShareMessage(message);
+      if (message) {
         setTimeout(() => setShareMessage(""), 2200);
-        setOpen(false);
-        return;
       }
 
-      setShareMessage(shareData.url);
+      setOpen(false);
     } catch (error) {
       if (error?.name !== "AbortError") {
         setShareMessage("تعذرت المشاركة، حاول مرة أخرى");
@@ -97,7 +83,7 @@ export function Navbar({ route }) {
           {
             type: "button",
             onClick: shareSite,
-            className: "inline-flex items-center gap-2 rounded-full bg-medical px-4 py-2 text-sm font-bold text-white shadow-sm transition hover:bg-navy"
+            className: "inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold text-navy/75 transition hover:bg-white hover:text-navy"
           },
           h(Share2, { size: 17 }),
           "شارك الموقع"
@@ -126,7 +112,7 @@ export function Navbar({ route }) {
             {
               type: "button",
               onClick: shareSite,
-              className: "flex w-full items-center justify-end gap-2 rounded-full bg-medical px-4 py-2 text-right text-sm font-bold text-white shadow-sm transition hover:bg-navy"
+              className: "flex w-full items-center justify-end gap-2 rounded-full px-4 py-2 text-right text-sm font-bold text-navy/75 transition hover:bg-white hover:text-navy"
             },
             "شارك الموقع",
             h(Share2, { size: 17 })
