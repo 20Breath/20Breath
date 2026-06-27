@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "../motion.js?v=20260610-smooth-join-email-required";
 import { h, pageTransition } from "../utils.js";
 
-const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbyCj0nr_CXjP6_MIJcOVtFdxyANnUVIOzZdVeRis_BYsk0JHIrKqVb-OC9qRCdmtPTV/exec";
+const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxpdEMq1xR3CQpesgOqiRAKSpw_LJsTHxS7cwOwbv-DZwsb5_W0tLGibk5N8aHq6iEm/exec";
 
 const fields = [
   { name: "name", label: "الاسم", type: "text", placeholder: "اكتب اسمك" },
@@ -81,7 +81,7 @@ export function Join() {
         "div",
         { className: "mb-9 text-center" },
         h("h1", { className: "text-4xl font-black text-navy sm:text-5xl" }, "انضم لفريق 20 نفس"),
-        h("p", { className: "mx-auto mt-4 max-w-2xl text-lg font-medium leading-8 text-navy/68" }, "عبئ البيانات التي ترغب بمشاركتها، وستصل التسجيلات إلى جدول الفريق بعد تفعيل الربط.")
+        h("p", { className: "mx-auto mt-4 max-w-2xl text-lg font-medium leading-8 text-navy/68" }, "عبئ البيانات التي ترغب بمشاركتها، وستصل التسجيلات مباشرة إلى جدول الفريق.")
       ),
       h(
         "form",

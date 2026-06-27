@@ -1,14 +1,14 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { AnimatePresence } from "./motion.js?v=20260610-registration-connected";
+import { AnimatePresence } from "./motion.js?v=20260628-registration-live";
 import { h } from "./utils.js";
-import { About } from "./components/About.js?v=20260610-registration-connected";
-import { Contact } from "./components/Contact.js?v=20260610-registration-connected";
-import { Footer } from "./components/Footer.js?v=20260610-registration-connected";
-import { Home } from "./components/Home.js?v=20260610-registration-connected";
-import { Join } from "./components/Join.js?v=20260610-registration-connected";
-import { Navbar } from "./components/Navbar.js?v=20260610-registration-connected";
-import { SocialLinks } from "./components/SocialLinks.js?v=20260610-registration-connected";
+import { About } from "./components/About.js?v=20260628-registration-live";
+import { Contact } from "./components/Contact.js?v=20260628-registration-live";
+import { Footer } from "./components/Footer.js?v=20260628-registration-live";
+import { Home } from "./components/Home.js?v=20260628-registration-live";
+import { Join } from "./components/Join.js?v=20260628-registration-live";
+import { Navbar } from "./components/Navbar.js?v=20260628-registration-live";
+import { SocialLinks } from "./components/SocialLinks.js?v=20260628-registration-live";
 
 const routes = {
   home: Home,
