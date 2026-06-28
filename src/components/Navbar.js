@@ -1,14 +1,14 @@
-﻿import React from "react";
-import { Menu, Share2, X } from "./Icons.js?v=20260628-visual-polish2";
-import { shareWebsite } from "../share.js?v=20260628-visual-polish2";
-import { h } from "../utils.js?v=20260628-visual-polish2";
+import React from "react";
+import { Menu, Share2, X } from "./Icons.js?v=20260628-visual-polish3";
+import { shareWebsite } from "../share.js?v=20260628-visual-polish3";
+import { h } from "../utils.js?v=20260628-visual-polish3";
 
 const links = [
-  ["home", "Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠØ©"],
-  ["about", "Ø¹Ù† 20 Ù†ÙØ³"],
-  ["join", "Ø§Ù†Ø¶Ù… Ù„Ù†Ø§"],
-  ["socials", "Ù…Ù†ØµØ§ØªÙ†Ø§"],
-  ["contact", "ØªÙˆØ§ØµÙ„ Ù…Ø¹Ù†Ø§"]
+  ["home", "الرئيسية"],
+  ["about", "عن 20 نفس"],
+  ["join", "انضم لنا"],
+  ["socials", "منصاتنا"],
+  ["contact", "تواصل معنا"]
 ];
 
 export function Navbar({ route }) {
@@ -26,7 +26,7 @@ export function Navbar({ route }) {
       setOpen(false);
     } catch (error) {
       if (error?.name !== "AbortError") {
-        setShareMessage("ØªØ¹Ø°Ø±Øª Ø§Ù„Ù…Ø´Ø§Ø±ÙƒØ©ØŒ Ø­Ø§ÙˆÙ„ Ù…Ø±Ø© Ø£Ø®Ø±Ù‰");
+        setShareMessage("تعذرت المشاركة، حاول مرة أخرى");
         setTimeout(() => setShareMessage(""), 2200);
       }
     }
@@ -64,14 +64,14 @@ export function Navbar({ route }) {
         },
         h("img", {
           src: "./assets/logo-20-nafas.jpeg",
-          alt: "Ø´Ø¹Ø§Ø± 20 Ù†ÙØ³",
+          alt: "شعار 20 نفس",
           className: "h-11 w-11 rounded-full object-contain ring-1 ring-navy/10"
         }),
         h(
           "span",
           { className: "leading-tight" },
-          h("span", { className: "block text-base font-black text-navy" }, "20 Ù†ÙØ³"),
-          h("span", { className: "block text-xs font-bold text-medical" }, "ØªÙ†ÙØ³ Ø¨Ø£Ù…Ø§Ù†")
+          h("span", { className: "block text-base font-black text-navy" }, "20 نفس"),
+          h("span", { className: "block text-xs font-bold text-medical" }, "تنفس بأمان")
         )
       ),
       h(
@@ -86,7 +86,7 @@ export function Navbar({ route }) {
             className: "nav-link inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold text-navy/75 transition hover:bg-white hover:text-navy"
           },
           h(Share2, { size: 17 }),
-          "Ø´Ø§Ø±Ùƒ Ø§Ù„Ù…ÙˆÙ‚Ø¹"
+          "شارك الموقع"
         )
       ),
       h(
@@ -94,7 +94,7 @@ export function Navbar({ route }) {
         {
           className: "grid h-11 w-11 place-items-center rounded-full bg-white text-navy shadow-sm md:hidden",
           onClick: () => setOpen((value) => !value),
-          "aria-label": open ? "Ø¥ØºÙ„Ø§Ù‚ Ø§Ù„Ù‚Ø§Ø¦Ù…Ø©" : "ÙØªØ­ Ø§Ù„Ù‚Ø§Ø¦Ù…Ø©"
+          "aria-label": open ? "إغلاق القائمة" : "فتح القائمة"
         },
         open ? h(X, { size: 21 }) : h(Menu, { size: 21 })
       )
@@ -114,7 +114,7 @@ export function Navbar({ route }) {
               onClick: shareSite,
               className: "nav-link flex w-full items-center justify-end gap-2 rounded-full px-4 py-2 text-right text-sm font-bold text-navy/75 transition hover:bg-white hover:text-navy"
             },
-            "Ø´Ø§Ø±Ùƒ Ø§Ù„Ù…ÙˆÙ‚Ø¹",
+            "شارك الموقع",
             h(Share2, { size: 17 })
           )
         )

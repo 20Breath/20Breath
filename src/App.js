@@ -1,14 +1,14 @@
-﻿import React from "react";
+import React from "react";
 import { createRoot } from "react-dom/client";
-import { AnimatePresence } from "./motion.js?v=20260628-visual-polish2";
-import { h } from "./utils.js?v=20260628-visual-polish2";
-import { About } from "./components/About.js?v=20260628-visual-polish2";
-import { Contact } from "./components/Contact.js?v=20260628-visual-polish2";
-import { Footer } from "./components/Footer.js?v=20260628-visual-polish2";
-import { Home } from "./components/Home.js?v=20260628-visual-polish2";
-import { Join } from "./components/Join.js?v=20260628-visual-polish2";
-import { Navbar } from "./components/Navbar.js?v=20260628-visual-polish2";
-import { SocialLinks } from "./components/SocialLinks.js?v=20260628-visual-polish2";
+import { AnimatePresence } from "./motion.js?v=20260628-visual-polish3";
+import { h } from "./utils.js?v=20260628-visual-polish3";
+import { About } from "./components/About.js?v=20260628-visual-polish3";
+import { Contact } from "./components/Contact.js?v=20260628-visual-polish3";
+import { Footer } from "./components/Footer.js?v=20260628-visual-polish3";
+import { Home } from "./components/Home.js?v=20260628-visual-polish3";
+import { Join } from "./components/Join.js?v=20260628-visual-polish3";
+import { Navbar } from "./components/Navbar.js?v=20260628-visual-polish3";
+import { SocialLinks } from "./components/SocialLinks.js?v=20260628-visual-polish3";
 
 const routes = {
   home: Home,

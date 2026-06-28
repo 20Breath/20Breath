@@ -1,14 +1,14 @@
-﻿import React from "react";
-import { Share2 } from "./Icons.js?v=20260628-visual-polish2";
-import { shareWebsite } from "../share.js?v=20260628-visual-polish2";
-import { h } from "../utils.js?v=20260628-visual-polish2";
+import React from "react";
+import { Share2 } from "./Icons.js?v=20260628-visual-polish3";
+import { shareWebsite } from "../share.js?v=20260628-visual-polish3";
+import { h } from "../utils.js?v=20260628-visual-polish3";
 
 const quickLinks = [
-  ["home", "Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠØ©"],
-  ["about", "Ø¹Ù† Ø§Ù„ÙØ±ÙŠÙ‚"],
-  ["join", "Ø§Ù†Ø¶Ù… Ù„Ù†Ø§"],
-  ["socials", "Ù…Ù†ØµØ§ØªÙ†Ø§"],
-  ["contact", "ØªÙˆØ§ØµÙ„ Ù…Ø¹Ù†Ø§"]
+  ["home", "الرئيسية"],
+  ["about", "عن الفريق"],
+  ["join", "انضم لنا"],
+  ["socials", "منصاتنا"],
+  ["contact", "تواصل معنا"]
 ];
 
 export function Footer() {
@@ -23,7 +23,7 @@ export function Footer() {
       }
     } catch (error) {
       if (error?.name !== "AbortError") {
-        setShareMessage("ØªØ¹Ø°Ø±Øª Ø§Ù„Ù…Ø´Ø§Ø±ÙƒØ©ØŒ Ø­Ø§ÙˆÙ„ Ù…Ø±Ø© Ø£Ø®Ø±Ù‰");
+        setShareMessage("تعذرت المشاركة، حاول مرة أخرى");
         setTimeout(() => setShareMessage(""), 2200);
       }
     }
@@ -57,7 +57,7 @@ export function Footer() {
             className: "nav-link inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold text-navy/72 transition hover:bg-soft hover:text-medical"
           },
           h(Share2, { size: 17 }),
-          "Ø´Ø§Ø±Ùƒ Ø§Ù„Ù…ÙˆÙ‚Ø¹"
+          "شارك الموقع"
         ),
         shareMessage &&
           h("span", { className: "rounded-full bg-navy px-4 py-2 text-xs font-black text-white shadow-soft" }, shareMessage)

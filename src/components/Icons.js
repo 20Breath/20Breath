@@ -1,4 +1,4 @@
-﻿import { h } from "../utils.js?v=20260628-visual-polish2";
+import { h } from "../utils.js?v=20260628-visual-polish3";
 
 function SvgIcon({ children, size = 24, ...props }) {
   return h(

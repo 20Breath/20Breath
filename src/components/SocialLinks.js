@@ -1,6 +1,6 @@
-﻿import { motion } from "../motion.js?v=20260628-visual-polish2";
-import { Camera, Music2 } from "./Icons.js?v=20260628-visual-polish2";
-import { h, pageTransition, revealItem, staggerContainer, viewportReveal } from "../utils.js?v=20260628-visual-polish2";
+import { motion } from "../motion.js?v=20260628-visual-polish3";
+import { Camera, Music2 } from "./Icons.js?v=20260628-visual-polish3";
+import { h, pageTransition, revealItem, staggerContainer, viewportReveal } from "../utils.js?v=20260628-visual-polish3";
 
 const platforms = [
   { name: "TikTok", icon: Music2, url: "https://www.tiktok.com/@20breaths?_r=1&_t=ZS-96dxY9ZpqJk" },
@@ -14,7 +14,7 @@ export function SocialLinks() {
     h(
       "section",
       { className: "mx-auto max-w-6xl" },
-      h("div", { className: "mb-10 text-center" }, h(motion.h1, { className: "text-4xl font-black text-navy sm:text-5xl", initial: { opacity: 0, y: 14 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.4 } }, "ØªØ§Ø¨Ø¹ÙˆÙ†Ø§ Ø¹Ù„Ù‰ Ù…Ù†ØµØ§ØªÙ†Ø§"), h(motion.p, { className: "mx-auto mt-4 max-w-xl text-lg font-medium leading-8 text-navy/68", initial: { opacity: 0, y: 12 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.4, delay: 0.08 } }, "Ù†Ø´Ø§Ø±Ùƒ Ù…Ø­ØªÙˆÙ‰ Ù‚ØµÙŠØ± ÙˆÙˆØ§Ø¶Ø­ Ø¹Ù† Ø§Ù„Ø¹Ù„Ø§Ø¬ Ø§Ù„ØªÙ†ÙØ³ÙŠØŒ Ø¨Ø·Ø±ÙŠÙ‚Ø© Ù‚Ø±ÙŠØ¨Ø© Ù…Ù† Ø§Ù„Ù†Ø§Ø³.")),
+      h("div", { className: "mb-10 text-center" }, h(motion.h1, { className: "text-4xl font-black text-navy sm:text-5xl", initial: { opacity: 0, y: 14 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.4 } }, "تابعونا على منصاتنا"), h(motion.p, { className: "mx-auto mt-4 max-w-xl text-lg font-medium leading-8 text-navy/68", initial: { opacity: 0, y: 12 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.4, delay: 0.08 } }, "نشارك محتوى قصير وواضح عن العلاج التنفسي، بطريقة قريبة من الناس.")),
       h(
         motion.div,
         { className: "grid gap-5 sm:grid-cols-2 lg:grid-cols-3", variants: staggerContainer, initial: "hidden", whileInView: "show", viewport: viewportReveal },
@@ -39,7 +39,7 @@ export function SocialLinks() {
                 whileTap: { scale: 0.98 },
                 className: "button-premium inline-flex rounded-full bg-navy px-6 py-3 text-sm font-black text-white transition hover:bg-medical"
               },
-              "Ø²ÙŠØ§Ø±Ø© Ø§Ù„Ø­Ø³Ø§Ø¨"
+              "زيارة الحساب"
             )
           )
         )
