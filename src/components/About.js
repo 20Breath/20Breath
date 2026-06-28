@@ -1,5 +1,5 @@
 import { motion } from "../motion.js?v=20260628-visual-polish";
-import { h, pageTransition, revealItem, staggerContainer, viewportReveal } from "../utils.js";
+import { h, pageTransition, revealItem, staggerContainer, viewportReveal } from "../utils.js?v=20260628-visual-polish";
 
 const sections = [
   {

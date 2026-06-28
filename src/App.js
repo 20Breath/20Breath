@@ -1,7 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { AnimatePresence } from "./motion.js?v=20260628-visual-polish";
-import { h } from "./utils.js";
+import { h } from "./utils.js?v=20260628-visual-polish";
 import { About } from "./components/About.js?v=20260628-visual-polish";
 import { Contact } from "./components/Contact.js?v=20260628-visual-polish";
 import { Footer } from "./components/Footer.js?v=20260628-visual-polish";

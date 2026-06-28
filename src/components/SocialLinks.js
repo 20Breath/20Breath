@@ -1,6 +1,6 @@
 import { motion } from "../motion.js?v=20260628-visual-polish";
 import { Camera, Music2 } from "./Icons.js?v=20260628-visual-polish";
-import { h, pageTransition, revealItem, staggerContainer, viewportReveal } from "../utils.js";
+import { h, pageTransition, revealItem, staggerContainer, viewportReveal } from "../utils.js?v=20260628-visual-polish";
 
 const platforms = [
   { name: "TikTok", icon: Music2, url: "https://www.tiktok.com/@20breaths?_r=1&_t=ZS-96dxY9ZpqJk" },

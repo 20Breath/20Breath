@@ -1,5 +1,5 @@
 import { motion } from "../motion.js?v=20260628-visual-polish";
-import { h, pageTransition } from "../utils.js";
+import { h, pageTransition } from "../utils.js?v=20260628-visual-polish";
 
 export function Contact() {
   const email = "azizkj9080@gmail.com";

@@ -1,6 +1,6 @@
 import { motion } from "../motion.js?v=20260628-visual-polish";
 import { Activity, Brain, Clapperboard, HeartPulse, Stethoscope } from "./Icons.js?v=20260628-visual-polish";
-import { goTo, h, pageTransition, revealItem, staggerContainer, viewportReveal } from "../utils.js";
+import { goTo, h, pageTransition, revealItem, staggerContainer, viewportReveal } from "../utils.js?v=20260628-visual-polish";
 
 const cards = [
   {

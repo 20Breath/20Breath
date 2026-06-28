@@ -1,7 +1,7 @@
 import React from "react";
 import { Share2 } from "./Icons.js?v=20260628-visual-polish";
 import { shareWebsite } from "../share.js?v=20260628-visual-polish";
-import { h } from "../utils.js";
+import { h } from "../utils.js?v=20260628-visual-polish";
 
 const quickLinks = [
   ["home", "الرئيسية"],

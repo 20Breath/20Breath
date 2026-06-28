@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "../motion.js?v=20260628-visual-polish";
-import { h, pageTransition } from "../utils.js";
+import { h, pageTransition } from "../utils.js?v=20260628-visual-polish";
 
 const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxpdEMq1xR3CQpesgOqiRAKSpw_LJsTHxS7cwOwbv-DZwsb5_W0tLGibk5N8aHq6iEm/exec";
 
