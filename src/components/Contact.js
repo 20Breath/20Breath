@@ -1,5 +1,5 @@
-import { motion } from "../motion.js?v=20260628-visual-polish";
-import { h, pageTransition } from "../utils.js?v=20260628-visual-polish";
+﻿import { motion } from "../motion.js?v=20260628-visual-polish2";
+import { h, pageTransition } from "../utils.js?v=20260628-visual-polish2";
 
 export function Contact() {
   const email = "azizkj9080@gmail.com";
@@ -19,11 +19,11 @@ export function Contact() {
           animate: { opacity: 1, scale: 1 },
           transition: { duration: 0.42, delay: 0.08 },
           src: "./assets/logo-20-nafas.jpeg",
-          alt: "شعار 20 نفس",
+          alt: "Ø´Ø¹Ø§Ø± 20 Ù†ÙØ³",
           className: "mx-auto mb-6 h-28 w-28 rounded-3xl object-contain p-2 shadow-sm ring-1 ring-navy/10"
         }),
-        h("h1", { className: "text-4xl font-black text-navy sm:text-5xl" }, "تواصل معنا"),
-        h("p", { className: "mx-auto mt-4 max-w-xl text-lg font-medium leading-8 text-navy/68" }, "للاستفسارات والتعاون، يمكنكم التواصل معنا عبر البريد الإلكتروني أو رقم التواصل."),
+        h("h1", { className: "text-4xl font-black text-navy sm:text-5xl" }, "ØªÙˆØ§ØµÙ„ Ù…Ø¹Ù†Ø§"),
+        h("p", { className: "mx-auto mt-4 max-w-xl text-lg font-medium leading-8 text-navy/68" }, "Ù„Ù„Ø§Ø³ØªÙØ³Ø§Ø±Ø§Øª ÙˆØ§Ù„ØªØ¹Ø§ÙˆÙ†ØŒ ÙŠÙ…ÙƒÙ†ÙƒÙ… Ø§Ù„ØªÙˆØ§ØµÙ„ Ù…Ø¹Ù†Ø§ Ø¹Ø¨Ø± Ø§Ù„Ø¨Ø±ÙŠØ¯ Ø§Ù„Ø¥Ù„ÙƒØªØ±ÙˆÙ†ÙŠ Ø£Ùˆ Ø±Ù‚Ù… Ø§Ù„ØªÙˆØ§ØµÙ„."),
         h(
           "div",
           { className: "mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row" },
