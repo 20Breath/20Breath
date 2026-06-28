@@ -1,6 +1,6 @@
 import React from "react";
-import { Menu, Share2, X } from "./Icons.js?v=20260610-share-link-muted";
-import { shareWebsite } from "../share.js?v=20260610-share-link-muted";
+import { Menu, Share2, X } from "./Icons.js?v=20260628-visual-polish";
+import { shareWebsite } from "../share.js?v=20260628-visual-polish";
 import { h } from "../utils.js";
 
 const links = [
@@ -42,7 +42,7 @@ export function Navbar({ route }) {
           setOpen(false);
         },
         className: [
-          "rounded-full px-4 py-2 text-sm font-bold transition",
+          "nav-link rounded-full px-4 py-2 text-sm font-bold transition",
           route === id ? "bg-navy text-white shadow-soft" : "text-navy/75 hover:bg-white hover:text-navy",
           mobile ? "w-full text-right" : ""
         ].join(" ")
@@ -83,7 +83,7 @@ export function Navbar({ route }) {
           {
             type: "button",
             onClick: shareSite,
-            className: "inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold text-navy/75 transition hover:bg-white hover:text-navy"
+            className: "nav-link inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold text-navy/75 transition hover:bg-white hover:text-navy"
           },
           h(Share2, { size: 17 }),
           "شارك الموقع"
@@ -112,7 +112,7 @@ export function Navbar({ route }) {
             {
               type: "button",
               onClick: shareSite,
-              className: "flex w-full items-center justify-end gap-2 rounded-full px-4 py-2 text-right text-sm font-bold text-navy/75 transition hover:bg-white hover:text-navy"
+              className: "nav-link flex w-full items-center justify-end gap-2 rounded-full px-4 py-2 text-right text-sm font-bold text-navy/75 transition hover:bg-white hover:text-navy"
             },
             "شارك الموقع",
             h(Share2, { size: 17 })

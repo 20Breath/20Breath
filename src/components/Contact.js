@@ -1,4 +1,4 @@
-import { motion } from "../motion.js?v=20260610-smooth-join-email-required";
+import { motion } from "../motion.js?v=20260628-visual-polish";
 import { h, pageTransition } from "../utils.js";
 
 export function Contact() {
@@ -12,9 +12,12 @@ export function Contact() {
       "section",
       { className: "mx-auto grid min-h-[calc(100vh-14rem)] max-w-3xl place-items-center" },
       h(
-        "div",
-        { className: "w-full rounded-[2rem] bg-white p-7 text-center shadow-soft ring-1 ring-navy/5 sm:p-10" },
-        h("img", {
+        motion.div,
+        { className: "premium-card w-full rounded-[2rem] bg-white p-7 text-center shadow-soft ring-1 ring-navy/5 sm:p-10", initial: { opacity: 0, y: 18 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.42 } },
+        h(motion.img, {
+          initial: { opacity: 0, scale: 0.92 },
+          animate: { opacity: 1, scale: 1 },
+          transition: { duration: 0.42, delay: 0.08 },
           src: "./assets/logo-20-nafas.jpeg",
           alt: "شعار 20 نفس",
           className: "mx-auto mb-6 h-28 w-28 rounded-3xl object-contain p-2 shadow-sm ring-1 ring-navy/10"
@@ -24,8 +27,8 @@ export function Contact() {
         h(
           "div",
           { className: "mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row" },
-          h("p", { className: "rounded-full bg-navy px-8 py-3.5 text-base font-black text-white shadow-soft" }, email),
-          h("p", { className: "rounded-full bg-soft px-8 py-3.5 text-base font-black text-navy shadow-soft ring-1 ring-navy/10" }, phone)
+          h("p", { className: "contact-pill rounded-full bg-navy px-8 py-3.5 text-base font-black text-white shadow-soft" }, email),
+          h("p", { className: "contact-pill rounded-full bg-soft px-8 py-3.5 text-base font-black text-navy shadow-soft ring-1 ring-navy/10" }, phone)
         )
       )
     )

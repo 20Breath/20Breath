@@ -1,6 +1,6 @@
 import React from "react";
-import { Share2 } from "./Icons.js?v=20260610-share-link-muted";
-import { shareWebsite } from "../share.js?v=20260610-share-link-muted";
+import { Share2 } from "./Icons.js?v=20260628-visual-polish";
+import { shareWebsite } from "../share.js?v=20260628-visual-polish";
 import { h } from "../utils.js";
 
 const quickLinks = [
@@ -44,7 +44,7 @@ export function Footer() {
             {
               key: id,
               onClick: () => (window.location.hash = id),
-              className: "rounded-full px-4 py-2 text-sm font-bold text-navy/72 transition hover:bg-soft hover:text-medical"
+              className: "nav-link rounded-full px-4 py-2 text-sm font-bold text-navy/72 transition hover:bg-soft hover:text-medical"
             },
             label
           )
@@ -54,7 +54,7 @@ export function Footer() {
           {
             type: "button",
             onClick: shareSite,
-            className: "inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold text-navy/72 transition hover:bg-soft hover:text-medical"
+            className: "nav-link inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold text-navy/72 transition hover:bg-soft hover:text-medical"
           },
           h(Share2, { size: 17 }),
           "شارك الموقع"

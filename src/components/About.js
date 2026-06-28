@@ -1,5 +1,5 @@
-import { motion } from "../motion.js?v=20260610-smooth-join-email-required";
-import { h, pageTransition } from "../utils.js";
+import { motion } from "../motion.js?v=20260628-visual-polish";
+import { h, pageTransition, revealItem, staggerContainer, viewportReveal } from "../utils.js";
 
 const sections = [
   {
@@ -49,14 +49,15 @@ export function About() {
       h(
         "section",
         { className: "mx-auto max-w-3xl space-y-5" },
-        sections.map((section) =>
+        sections.map((section, index) =>
           h(
             motion.article,
             {
               key: section.title,
               initial: { opacity: 0, y: 16 },
               whileInView: { opacity: 1, y: 0 },
-              viewport: { once: true },
+              viewport: viewportReveal,
+              transition: { duration: 0.42, delay: index * 0.05 },
               className: "liquid-card rounded-[2rem] p-7"
             },
             h("h1", { className: "mb-4 text-3xl font-black text-navy sm:text-4xl" }, section.title),
@@ -69,26 +70,24 @@ export function About() {
         { className: "mt-14" },
         h("p", { className: "mb-5 text-sm font-black tracking-[0.35em] text-navy/45" }, "مؤسسو 20 نفس"),
         h(
-          "div",
-          { className: "grid gap-6 sm:grid-cols-2 xl:grid-cols-4" },
+          motion.div,
+          { className: "grid gap-6 sm:grid-cols-2 xl:grid-cols-4", variants: staggerContainer, initial: "hidden", whileInView: "show", viewport: viewportReveal },
           founders.map((founder, index) =>
             h(
               motion.article,
               {
                 key: founder.name,
-                initial: { opacity: 0, y: 18 },
-                whileInView: { opacity: 1, y: 0 },
-                viewport: { once: true },
-                transition: { delay: index * 0.05 },
-                className: "rounded-[1.5rem] border border-navy/10 bg-white p-7 text-center shadow-soft transition hover:-translate-y-1 hover:border-medical/30 hover:shadow-glow"
+                variants: revealItem,
+                whileHover: { y: -8 },
+                className: "founder-card premium-card rounded-[1.5rem] border border-navy/10 bg-white p-7 text-center shadow-soft transition hover:border-medical/30 hover:shadow-glow"
               },
               h(
                 "div",
-                { className: "mx-auto mb-6 h-32 w-32 overflow-hidden rounded-full bg-white p-1 ring-4 ring-medical/80" },
+                { className: "founder-orbit mx-auto mb-6 h-32 w-32 overflow-hidden rounded-full bg-white p-1 ring-4 ring-medical/80" },
                 h("img", {
                   src: founder.src,
                   alt: founder.name,
-                  className: "h-full w-full rounded-full object-cover"
+                  className: "founder-image h-full w-full rounded-full object-cover"
                 })
               ),
               h("p", { className: "mb-2 text-sm font-black text-medical" }, founder.role),
